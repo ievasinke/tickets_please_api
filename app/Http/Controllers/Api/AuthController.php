@@ -11,21 +11,32 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    use ApiResponses;
-    public function login(LoginUserRequest $request) {
-        $request->validated($request->all());
+	use ApiResponses;
+	public function login(LoginUserRequest $request)
+	{
+		$request->validated($request->all());
 
-        if (!Auth::attempt($request->only('email', 'password'))) {
-            return $this->error('Invalid credentials', 401);
-        }
+		if (!Auth::attempt($request->only('email', 'password'))) {
+			return $this->error('Invalid credentials', 401);
+		}
 
-        $user = User::firstWhere('email', $request->email);
+		$user = User::firstWhere('email', $request->email);
 
-        return $this->ok(
-            'Authenticated',
-            [
-                'token' => $user->createToken('API token for ' . $user->email)->plainTextToken
-            ]
-            );
-    }
+		return $this->ok(
+			'Authenticated',
+			[
+				'token' => $user->createToken(
+						'API token for ' . $user->email,
+						['*'],
+						now()->addMonth())->plainTextToken
+			]
+		);
+	}
+
+	public function logout(Request $request)
+	{
+		$request->user()->currentAccessToken()->delete();
+
+		return $this->ok('');
+	}
 }
