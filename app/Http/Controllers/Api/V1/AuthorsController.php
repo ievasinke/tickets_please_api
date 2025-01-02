@@ -6,54 +6,51 @@ use App\Http\Requests\Api\V1\StoreUserRequest;
 use App\Http\Requests\Api\V1\UpdateUserRequest;
 use App\Http\Resources\V1\UserResource;
 use App\Models\User;
+use App\Http\Filters\V1\AuthorFilter;
 
 class AuthorsController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-		if ($this->include('tickets')) {
-			return UserResource::collection(User::with('tickets')->paginate());
-		}
+	/**
+	 * Display a listing of the resource.
+	 */
+	public function index(AuthorFilter $filters)
+	{
+		return UserResource::collection(User::filter($filters)->paginate());
+	}
 
-        return UserResource::collection(User::paginate());
-    }
+	/**
+	 * Store a newly created resource in storage.
+	 */
+	public function store(StoreUserRequest $request)
+	{
+		//
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreUserRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $author)
-    {
+	/**
+	 * Display the specified resource.
+	 */
+	public function show(User $author)
+	{
 		if ($this->include('tickets')) {
 			return new UserResource($author->load('tickets'));
 		}
 
-        return new UserResource($author);
-    }
+		return new UserResource($author);
+	}
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateUserRequest $request, User $user)
-    {
-        //
-    }
+	/**
+	 * Update the specified resource in storage.
+	 */
+	public function update(UpdateUserRequest $request, User $user)
+	{
+		//
+	}
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
+	/**
+	 * Remove the specified resource from storage.
+	 */
+	public function destroy(User $user)
+	{
+		//
+	}
 }
