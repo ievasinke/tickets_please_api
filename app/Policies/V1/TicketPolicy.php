@@ -23,7 +23,7 @@ class TicketPolicy
 			return $user->id === $ticket->user_id;
 		}
 
-		return $user->id === $ticket->user_id;
+		return false;
 	}
 
 	public function replace(User $user, Ticket $ticket) {
@@ -31,15 +31,12 @@ class TicketPolicy
 			return true;
 		} 
 
-		return $user->id === $ticket->user_id;
+		return false;
 	}
 
-	public function store(User $user, Ticket $ticket) {
-		if ($user->tokenCan(Abilities::CreateTicket)) {
-			return true;
-		} 
-
-		return $user->id === $ticket->user_id;
+	public function store(User $user) {
+		return $user->tokenCan(Abilities::CreateTicket) ||
+			$user->tokenCan(Abilities::CreateOwnTicket);
 	}
 
 	public function update(User $user, Ticket $ticket) {
@@ -49,6 +46,6 @@ class TicketPolicy
 			return $user->id === $ticket->user_id;
 		}
 
-		return $user->id === $ticket->user_id;
+		return false;
 	}
 }
