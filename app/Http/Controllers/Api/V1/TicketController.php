@@ -19,9 +19,9 @@ class TicketController extends ApiController
 	 * 
 	 * @group Managing Tickets
 	 * 
-	 * @queryParam sort string Data field(s) to sort by. Separate multiple fields with a commas. Denote descending soert with a minus sign. Example: sort=title,-createdAt
+	 * @queryParam sort string Data field(s) to sort by. Separate multiple fields with a commas. Denote descending sort with a minus sign. Example: sort=title,-createdAt
 	 * @queryParam filter[status] Filter by status code: A, C, H, X. No-example
-	 * @queryParam filter[title] Filter by title. Wildcards are suppoted. Example: *fix*
+	 * @queryParam filter[title] Filter by title. Wildcards are supported. Example: *fix*
 	 * 
 	 */
 	public function index(TicketFilter $filters)
@@ -139,7 +139,7 @@ class TicketController extends ApiController
 	}
 
 	/**
-	 * Detlete a ticket
+	 * Delete a ticket
 	 * 
 	 * Remove the specified ticket from storage.
 	 * 

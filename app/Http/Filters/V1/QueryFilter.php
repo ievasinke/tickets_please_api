@@ -56,13 +56,13 @@ abstract class QueryFilter
 				continue;
 			}
 
-			$colunmName = $this->sortable[$sortAttribute] ?? null;
+			$columnName = $this->sortable[$sortAttribute] ?? null;
 
-			if ($colunmName === null) {
-				$colunmName = $sortAttribute;
+			if ($columnName === null) {
+				$columnName = $sortAttribute;
 			}
 
-			$this->builder->orderBy($colunmName, $direction);
+			$this->builder->orderBy($columnName, $direction);
 		}
 	}
 }
