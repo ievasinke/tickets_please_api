@@ -35,7 +35,7 @@ trait ApiResponses
 	protected function notAuthorized($message) {
 		return $this->error([
 			'status' => 403,
-			'message' => $message
+			'message' => $message,
 		]);
 	}
 }

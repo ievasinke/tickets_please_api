@@ -32,6 +32,7 @@ return Application::configure(basePath: dirname(__DIR__))
 					'type' => class_basename($e),
 					'status' => intval($e->getCode()),
 					'message' => $e->getMessage(),
+					'LOG' => '..source.. Line: ' . $e->getLine() . ': ' . $e->getFile()
 				]
 			]);
 		});

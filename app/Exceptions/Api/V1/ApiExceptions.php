@@ -13,6 +13,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ApiExceptions
 {
+
+	use ApiResponses;
+
 	public static $handlers = [
 		AuthenticationException::class => 'handleAuthentication',
 		AuthorizationException::class => 'handleAuthorization',
@@ -21,13 +24,10 @@ class ApiExceptions
 		ValidationException::class => 'handleValidation'
 	];
 
-	use ApiResponses;
-
 	public static function handleAuthentication(
 		AuthenticationException $e,
 		Request $request
-		): JsonResponse
-	{
+	): JsonResponse {
 		return response()->json([
 			'errors' => [
 				'type' => class_basename($e),
@@ -37,25 +37,24 @@ class ApiExceptions
 		]);
 	}
 
-	public static function handleAuthorization(
-		AuthenticationException $e,
-		Request $request
-		): JsonResponse
-	{
-		return response()->json([
-			'errors' => [
-				'type' => class_basename($e),
-				'status' => 403,
-				'message' => $e->getMessage()
-			],
-		]);
-	}
+	//public static function handleAuthorization(
+	//	AuthorizationException $e,
+	//	Request $request
+	//): JsonResponse {
+	//	return response()->json([
+	//		'errors' => [
+	//			'type' => class_basename($e),
+	//			'status' => 403,
+	//			'message' => $e->getMessage(),
+	//			//'LOG' => 'LOG: Line: ' . $e->getLine() . ': ' . $e->getFile()
+	//		],
+	//	]);
+	//}
 
 	public static function handleModelNotFound(
-		ModelNotFoundException|NotFoundHttpException $e, 
+		ModelNotFoundException|NotFoundHttpException $e,
 		Request $request
-		): JsonResponse
-	{
+	): JsonResponse {
 		return response()->json([
 			'errors' => [
 				'type' => class_basename($e),
@@ -66,22 +65,21 @@ class ApiExceptions
 	}
 
 	public static function handleValidation(
-		ValidationException $e, 
+		ValidationException $e,
 		Request $request
-		): JsonResponse
-	{
+	): JsonResponse {
 		foreach ($e->errors() as $key => $value) {
 			foreach ($value as $message) {
 				$errors[] = [
 					'type' => class_basename($e),
 					'status' => 422,
 					'message' => $message,
-					'source' => $key
+					'source' => $key,
 				];
 			}
 		}
 		return response()->json([
-			'errors' => $errors,
+			'errors' => $errors
 		]);
 	}
 }

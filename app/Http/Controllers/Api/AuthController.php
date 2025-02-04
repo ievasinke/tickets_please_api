@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
 	use ApiResponses;
+
+	/**
+	 * Login
+	 *
+	 * Authenticate the user and returns the user's API token.
+	 * 
+	 * @unauthenticated
+	 * @group Authentication
+	 * @response 200 {
+	 * "message": "Authenticated",
+	 * "data": {
+	 * 	"token": "env('SCRIBE_AUTH_KEY')"
+	 * },
+	 * "status": 200
+	 *}
+	 */
 	public function login(LoginUserRequest $request)
 	{
 		$request->validated($request->all());
@@ -27,12 +43,22 @@ class AuthController extends Controller
 			'Authenticated',
 			[
 				'token' => $user->createToken(
-						'API token for ' . $user->email,
-						Abilities::getAbilities($user),
-						now()->addMonth())->plainTextToken
+					'API token for ' . $user->email,
+					Abilities::getAbilities($user),
+					now()->addMonth()
+				)->plainTextToken
 			]
 		);
 	}
+
+	/**
+	 * Logout
+	 *
+	 * Signs out the user and destroy's API token.
+	 * 
+	 * @group Authentication
+	 * @response 200 {}
+	 */
 
 	public function logout(Request $request)
 	{

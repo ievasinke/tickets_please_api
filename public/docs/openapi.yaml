@@ -1,0 +1,1308 @@
+openapi: 3.0.3
+info:
+  title: 'Tickets Please API Documentation'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    post:
+      summary: Login
+      operationId: login
+      description: "Authenticate the user and returns the user's API token."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Authenticated
+                  data:
+                    token: "env('SCRIBE_AUTH_KEY')"
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: Authenticated
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                        example: "env('SCRIBE_AUTH_KEY')"
+                  status:
+                    type: integer
+                    example: 200
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: daniel.ernestina@example.org
+                  nullable: false
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: '!N#G(Q?gK'
+                  nullable: false
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: Logout
+      operationId: logout
+      description: "Signs out the user and destroy's API token."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
+      tags:
+        - Authentication
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    type: AuthenticationException
+                    status: 401
+                    message: Unauthenticated.
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: AuthenticationException
+                      status:
+                        type: integer
+                        example: 401
+                      message:
+                        type: string
+                        example: Unauthenticated.
+      tags:
+        - Endpoints
+  /api/v1/user:
+    get:
+      summary: ''
+      operationId: getApiV1User
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    type: AuthenticationException
+                    status: 401
+                    message: Unauthenticated.
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: AuthenticationException
+                      status:
+                        type: integer
+                        example: 401
+                      message:
+                        type: string
+                        example: Unauthenticated.
+      tags:
+        - Endpoints
+  /api/v1/tickets:
+    get:
+      summary: 'Get all tickets'
+      operationId: getAllTickets
+      description: ''
+      parameters:
+        -
+          in: query
+          name: sort
+          description: 'Data field(s) to sort by. Separate multiple fields with a commas. Denote descending soert with a minus sign.'
+          example: 'sort=title,-createdAt'
+          required: false
+          schema:
+            type: string
+            description: 'Data field(s) to sort by. Separate multiple fields with a commas. Denote descending soert with a minus sign.'
+            example: 'sort=title,-createdAt'
+            nullable: false
+        -
+          in: query
+          name: 'filter[status]'
+          description: 'Filter by status code: A, C, H, X.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter by status code: A, C, H, X.'
+            example: null
+            nullable: false
+        -
+          in: query
+          name: 'filter[title]'
+          description: 'Filter by title. Wildcards are suppoted.'
+          example: '*fix*'
+          required: false
+          schema:
+            type: string
+            description: 'Filter by title. Wildcards are suppoted.'
+            example: '*fix*'
+            nullable: false
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    type: AuthenticationException
+                    status: 401
+                    message: Unauthenticated.
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: AuthenticationException
+                      status:
+                        type: integer
+                        example: 401
+                      message:
+                        type: string
+                        example: Unauthenticated.
+      tags:
+        - 'Managing Tickets'
+  '/api/v1/tickets/{id}':
+    get:
+      summary: 'Get a specific ticket'
+      operationId: getASpecificTicket
+      description: 'Display an individual ticket.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    type: AuthenticationException
+                    status: 401
+                    message: Unauthenticated.
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: AuthenticationException
+                      status:
+                        type: integer
+                        example: 401
+                      message:
+                        type: string
+                        example: Unauthenticated.
+      tags:
+        - 'Managing Tickets'
+    delete:
+      summary: 'Detlete a ticket'
+      operationId: detleteATicket
+      description: 'Remove the specified ticket from storage.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
+      tags:
+        - 'Managing Tickets'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the ticket.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/tickets/{ticket_id}':
+    put:
+      summary: 'Replace a ticket'
+      operationId: replaceATicket
+      description: 'Replace the specified ticket in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Managing Tickets'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  nullable: false
+                  properties:
+                    attributes:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        title:
+                          type: string
+                          description: ''
+                          example: quis
+                          nullable: false
+                        description:
+                          type: string
+                          description: ''
+                          example: 'Quibusdam est repellat ea modi temporibus et molestiae voluptatem.'
+                          nullable: false
+                        status:
+                          type: string
+                          description: ''
+                          example: C
+                          nullable: false
+                          enum:
+                            - A
+                            - C
+                            - H
+                            - X
+                    relationships:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        author:
+                          type: object
+                          description: ''
+                          example: []
+                          nullable: false
+                          properties:
+                            data:
+                              type: object
+                              description: ''
+                              example: []
+                              nullable: false
+                              properties:
+                                id:
+                                  type: integer
+                                  description: ''
+                                  example: 2
+                                  nullable: false
+              required:
+                - data
+    patch:
+      summary: 'Update the ticket'
+      operationId: updateTheTicket
+      description: 'Update the specified ticket in storage.'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Managing Tickets'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  nullable: false
+                  properties:
+                    attributes:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        title:
+                          type: string
+                          description: ''
+                          example: laboriosam
+                          nullable: false
+                        description:
+                          type: string
+                          description: ''
+                          example: 'Sit corrupti nihil consectetur sit sint est necessitatibus.'
+                          nullable: false
+                        status:
+                          type: string
+                          description: ''
+                          example: X
+                          nullable: false
+                          enum:
+                            - A
+                            - C
+                            - H
+                            - X
+                    relationships:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        author:
+                          type: object
+                          description: ''
+                          example: []
+                          nullable: false
+                          properties:
+                            data:
+                              type: object
+                              description: ''
+                              example: []
+                              nullable: false
+                              properties:
+                                id:
+                                  type: string
+                                  description: ''
+                                  example: null
+                                  nullable: false
+    parameters:
+      -
+        in: path
+        name: ticket_id
+        description: 'The ID of the ticket.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/authors/{author_id}/tickets':
+    get:
+      summary: 'Get all tickets'
+      operationId: getAllTickets
+      description: 'Retrieves all tickets created by a specific user.'
+      parameters:
+        -
+          in: query
+          name: sort
+          description: 'Data field(s) to sort by. Separate multiple fields with commas. Denote descending sort with a minus sign.'
+          example: sort=name
+          required: false
+          schema:
+            type: string
+            description: 'Data field(s) to sort by. Separate multiple fields with commas. Denote descending sort with a minus sign.'
+            example: sort=name
+            nullable: false
+        -
+          in: query
+          name: 'filter[name]'
+          description: 'Filter by name. Wildcards are supported.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter by name. Wildcards are supported.'
+            example: null
+            nullable: false
+        -
+          in: query
+          name: 'filter[email]'
+          description: 'Filter by email. Wildcards are supported.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter by email. Wildcards are supported.'
+            example: null
+            nullable: false
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: '{ //TODO: Add response body }'
+      tags:
+        - 'Managing Tickets by Author'
+    parameters:
+      -
+        in: path
+        name: author_id
+        description: 'The ID of the author.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: authorId
+        description: "The author's ID."
+        example: null
+        required: true
+        schema:
+          type: integer
+  '/api/v1/authors/{author_id}/tickets/{id}':
+    delete:
+      summary: "Delete an author's ticket"
+      operationId: deleteAnAuthorsTicket
+      description: "Delete an author's ticket."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
+      tags:
+        - 'Managing Tickets by Author'
+    parameters:
+      -
+        in: path
+        name: author_id
+        description: 'The ID of the author.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: id
+        description: 'The ID of the ticket.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: authorId
+        description: "The author's ID."
+        example: null
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: ticketId
+        description: "The ticket's ID."
+        example: null
+        required: true
+        schema:
+          type: integer
+  '/api/v1/authors/{author_id}/tickets/{ticket_id}':
+    put:
+      summary: "Replace an author's ticket"
+      operationId: replaceAnAuthorsTicket
+      description: 'Replaces a ticket for a specific user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    type: ticket
+                    id: 9
+                    attributes:
+                      title: 'New title'
+                      description: 'Lore ipsum'
+                      status: C
+                      created_at: '2025-01-21T13:57:47.000000Z'
+                      updated_at: '2025-01-30T13:16:42.000000Z'
+                    relationships:
+                      author:
+                        data:
+                          type: user
+                          id: 4
+                        links:
+                          self: 'http://localhost/api/v1/authors/4'
+                    links:
+                      self: 'http://localhost/api/v1/tickets/9'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: ticket
+                      id:
+                        type: integer
+                        example: 9
+                      attributes:
+                        type: object
+                        properties:
+                          title:
+                            type: string
+                            example: 'New title'
+                          description:
+                            type: string
+                            example: 'Lore ipsum'
+                          status:
+                            type: string
+                            example: C
+                          created_at:
+                            type: string
+                            example: '2025-01-21T13:57:47.000000Z'
+                          updated_at:
+                            type: string
+                            example: '2025-01-30T13:16:42.000000Z'
+                      relationships:
+                        type: object
+                        properties:
+                          author:
+                            type: object
+                            properties:
+                              data:
+                                type: object
+                                properties:
+                                  type:
+                                    type: string
+                                    example: user
+                                  id:
+                                    type: integer
+                                    example: 4
+                              links:
+                                type: object
+                                properties:
+                                  self:
+                                    type: string
+                                    example: 'http://localhost/api/v1/authors/4'
+                      links:
+                        type: object
+                        properties:
+                          self:
+                            type: string
+                            example: 'http://localhost/api/v1/tickets/9'
+      tags:
+        - 'Managing Tickets by Author'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  nullable: false
+                  properties:
+                    attributes:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        title:
+                          type: string
+                          description: ''
+                          example: iure
+                          nullable: false
+                        description:
+                          type: string
+                          description: ''
+                          example: 'Saepe quaerat iste et aut.'
+                          nullable: false
+                        status:
+                          type: string
+                          description: ''
+                          example: A
+                          nullable: false
+                          enum:
+                            - A
+                            - C
+                            - H
+                            - X
+                    relationships:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        author:
+                          type: object
+                          description: ''
+                          example: []
+                          nullable: false
+                          properties:
+                            data:
+                              type: object
+                              description: ''
+                              example: []
+                              nullable: false
+                              properties:
+                                id:
+                                  type: integer
+                                  description: ''
+                                  example: 14
+                                  nullable: false
+              required:
+                - data
+    patch:
+      summary: "Update an author's ticket"
+      operationId: updateAnAuthorsTicket
+      description: "Update an author's ticket."
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Managing Tickets by Author'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  nullable: false
+                  properties:
+                    attributes:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        title:
+                          type: string
+                          description: ''
+                          example: aut
+                          nullable: false
+                        description:
+                          type: string
+                          description: ''
+                          example: 'Sunt labore deleniti omnis nam culpa hic et.'
+                          nullable: false
+                        status:
+                          type: string
+                          description: ''
+                          example: A
+                          nullable: false
+                          enum:
+                            - A
+                            - C
+                            - H
+                            - X
+                    relationships:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        author:
+                          type: object
+                          description: ''
+                          example: []
+                          nullable: false
+                          properties:
+                            data:
+                              type: object
+                              description: ''
+                              example: []
+                              nullable: false
+                              properties:
+                                id:
+                                  type: string
+                                  description: ''
+                                  example: null
+                                  nullable: false
+    parameters:
+      -
+        in: path
+        name: author_id
+        description: 'The ID of the author.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: ticket_id
+        description: 'The ID of the ticket.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: authorId
+        description: "The author's ID."
+        example: null
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: ticketId
+        description: "The ticket's ID."
+        example: null
+        required: true
+        schema:
+          type: integer
+  /api/v1/users:
+    get:
+      summary: 'Get all users'
+      operationId: getAllUsers
+      description: ''
+      parameters:
+        -
+          in: query
+          name: sort
+          description: 'Data field(s) to sort by. Separate multiple fields with commas. Denote descending sort with a minus sign.'
+          example: sort=name
+          required: false
+          schema:
+            type: string
+            description: 'Data field(s) to sort by. Separate multiple fields with commas. Denote descending sort with a minus sign.'
+            example: sort=name
+            nullable: false
+        -
+          in: query
+          name: 'filter[name]'
+          description: 'Filter by name. Wildcards are supported.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter by name. Wildcards are supported.'
+            example: null
+            nullable: false
+        -
+          in: query
+          name: 'filter[email]'
+          description: 'Filter by email. Wildcards are supported.'
+          example: null
+          required: false
+          schema:
+            type: string
+            description: 'Filter by email. Wildcards are supported.'
+            example: null
+            nullable: false
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    type: AuthenticationException
+                    status: 401
+                    message: Unauthenticated.
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: AuthenticationException
+                      status:
+                        type: integer
+                        example: 401
+                      message:
+                        type: string
+                        example: Unauthenticated.
+      tags:
+        - 'Managing Users'
+    post:
+      summary: 'Create a user'
+      operationId: createAUser
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    type: user
+                    id: 14
+                    attributes:
+                      name: 'My User'
+                      email: user@user.com
+                      isManager: false
+                    links:
+                      self: 'http://localhost/api/v1/authors/14'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: user
+                      id:
+                        type: integer
+                        example: 14
+                      attributes:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: 'My User'
+                          email:
+                            type: string
+                            example: user@user.com
+                          isManager:
+                            type: boolean
+                            example: false
+                      links:
+                        type: object
+                        properties:
+                          self:
+                            type: string
+                            example: 'http://localhost/api/v1/authors/14'
+      tags:
+        - 'Managing Users'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  nullable: false
+                  properties:
+                    attributes:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        name:
+                          type: string
+                          description: ''
+                          example: aut
+                          nullable: false
+                        email:
+                          type: string
+                          description: 'Must be a valid email address.'
+                          example: ciara.donnelly@example.net
+                          nullable: false
+                        isManager:
+                          type: boolean
+                          description: ''
+                          example: false
+                          nullable: false
+                        password:
+                          type: string
+                          description: ''
+                          example: 'bW*>]..{DdkP'
+                          nullable: false
+              required:
+                - data
+  '/api/v1/users/{id}':
+    get:
+      summary: 'Get a specific user'
+      operationId: getASpecificUser
+      description: 'Display an individual user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    type: AuthenticationException
+                    status: 401
+                    message: Unauthenticated.
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: AuthenticationException
+                      status:
+                        type: integer
+                        example: 401
+                      message:
+                        type: string
+                        example: Unauthenticated.
+      tags:
+        - 'Managing Users'
+    delete:
+      summary: 'Delete a user'
+      operationId: deleteAUser
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
+      tags:
+        - 'Managing Users'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/v1/users/{user_id}':
+    put:
+      summary: 'Replace a user'
+      operationId: replaceAUser
+      description: 'Replace the specified user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    type: user
+                    id: 14
+                    attributes:
+                      name: 'My User'
+                      email: user@user.com
+                      isManager: false
+                    links:
+                      self: 'http://localhost/api/v1/authors/14'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: user
+                      id:
+                        type: integer
+                        example: 14
+                      attributes:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: 'My User'
+                          email:
+                            type: string
+                            example: user@user.com
+                          isManager:
+                            type: boolean
+                            example: false
+                      links:
+                        type: object
+                        properties:
+                          self:
+                            type: string
+                            example: 'http://localhost/api/v1/authors/14'
+      tags:
+        - 'Managing Users'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  nullable: false
+                  properties:
+                    attributes:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        name:
+                          type: string
+                          description: ''
+                          example: deserunt
+                          nullable: false
+                        email:
+                          type: string
+                          description: 'Must be a valid email address.'
+                          example: dejon21@example.org
+                          nullable: false
+                        isManager:
+                          type: boolean
+                          description: ''
+                          example: true
+                          nullable: false
+                        password:
+                          type: string
+                          description: ''
+                          example: '_;@^!]8x>qBH}=3`<[0K'
+                          nullable: false
+              required:
+                - data
+    patch:
+      summary: 'Update the user'
+      operationId: updateTheUser
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    type: user
+                    id: 14
+                    attributes:
+                      name: 'My User'
+                      email: user@user.com
+                      isManager: false
+                    links:
+                      self: 'http://localhost/api/v1/authors/14'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: user
+                      id:
+                        type: integer
+                        example: 14
+                      attributes:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            example: 'My User'
+                          email:
+                            type: string
+                            example: user@user.com
+                          isManager:
+                            type: boolean
+                            example: false
+                      links:
+                        type: object
+                        properties:
+                          self:
+                            type: string
+                            example: 'http://localhost/api/v1/authors/14'
+      tags:
+        - 'Managing Users'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  nullable: false
+                  properties:
+                    attributes:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        name:
+                          type: string
+                          description: ''
+                          example: iure
+                          nullable: false
+                        email:
+                          type: string
+                          description: 'Must be a valid email address.'
+                          example: tstark@example.net
+                          nullable: false
+                        isManager:
+                          type: boolean
+                          description: ''
+                          example: true
+                          nullable: false
+                        password:
+                          type: string
+                          description: ''
+                          example: p`/F_TjSYaL_
+                          nullable: false
+    parameters:
+      -
+        in: path
+        name: user_id
+        description: 'The ID of the user.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/authors:
+    get:
+      summary: 'Get all authors'
+      operationId: getAllAuthors
+      description: 'Retrieves all users that have created tickets.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    type: AuthenticationException
+                    status: 401
+                    message: Unauthenticated.
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: AuthenticationException
+                      status:
+                        type: integer
+                        example: 401
+                      message:
+                        type: string
+                        example: Unauthenticated.
+      tags:
+        - 'Showing Authors'
+  '/api/v1/authors/{id}':
+    get:
+      summary: 'Get a specific author'
+      operationId: getASpecificAuthor
+      description: 'Display an individual user.'
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errors:
+                    type: AuthenticationException
+                    status: 401
+                    message: Unauthenticated.
+                properties:
+                  errors:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        example: AuthenticationException
+                      status:
+                        type: integer
+                        example: 401
+                      message:
+                        type: string
+                        example: Unauthenticated.
+      tags:
+        - 'Showing Authors'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the author.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+tags:
+  -
+    name: Authentication
+    description: ''
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: 'Managing Tickets'
+    description: ''
+  -
+    name: 'Managing Tickets by Author'
+    description: ''
+  -
+    name: 'Managing Users'
+    description: ''
+  -
+    name: 'Showing Authors'
+    description: ''
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.'
+security:
+  -
+    default: []

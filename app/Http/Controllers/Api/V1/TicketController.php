@@ -15,7 +15,14 @@ class TicketController extends ApiController
 	protected $policyClass = TicketPolicy::class;
 
 	/**
-	 * Display a listing of the resource.
+	 * Get all tickets
+	 * 
+	 * @group Managing Tickets
+	 * 
+	 * @queryParam sort string Data field(s) to sort by. Separate multiple fields with a commas. Denote descending soert with a minus sign. Example: sort=title,-createdAt
+	 * @queryParam filter[status] Filter by status code: A, C, H, X. No-example
+	 * @queryParam filter[title] Filter by title. Wildcards are suppoted. Example: *fix*
+	 * 
 	 */
 	public function index(TicketFilter $filters)
 	{
@@ -26,7 +33,38 @@ class TicketController extends ApiController
 	}
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Create a ticket
+	 * 
+	 * Creates a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user.
+	 * 
+	 * @group Managing Tickets
+	 * 
+	 * @response 200 {
+	 * "data":{
+	 * 	"type":"ticket",
+	 * 	"id":105,
+	 * 		"attributes":{
+	 * 			"title":"Create ticket title",
+	 * 			"description":"This ticket has a description",
+	 * 			"status":"A",
+	 * 			"created_at":"2025-01-30T12:38:32.000000Z",
+	 * 			"updated_at":"2025-01-30T12:38:32.000000Z"},
+	 * 			"relationships":{
+	 * 				"author":{
+	 * 					"data":{
+	 * 						"type":"user",
+	 * 						"id":"1"
+	 * 					},
+	 * 					"links":{
+	 * 						"self":"http:\/\/localhost\/api\/v1\/authors\/1"
+	 * 					}
+	 * 				}
+	 * 			},
+	 * 		"links":{
+	 * 			"self":"http:\/\/localhost\/api\/v1\/tickets\/105"
+	 * 		}
+	 * 	}
+	 * }
 	 */
 	public function store(StoreTicketRequest $request)
 	{
@@ -38,7 +76,12 @@ class TicketController extends ApiController
 	}
 
 	/**
-	 * Display the specified resource.
+	 * Get a specific ticket
+	 * 
+	 * Display an individual ticket.
+	 * 
+	 * @group Managing Tickets
+	 * 
 	 */
 	public function show(Ticket $ticket)
 	{
@@ -50,7 +93,12 @@ class TicketController extends ApiController
 	}
 
 	/**
-	 * Update the specified resource in storage.
+	 * Update the ticket
+	 * 
+	 * Update the specified ticket in storage.
+	 * 
+	 * @group Managing Tickets
+	 * 
 	 */
 	public function update(
 		UpdateTicketRequest $request,
@@ -68,7 +116,12 @@ class TicketController extends ApiController
 	}
 
 	/**
-	 * Replace the specified resource in storage.
+	 * Replace a ticket
+	 * 
+	 * Replace the specified ticket in storage.
+	 * 
+	 * @group Managing Tickets
+	 * 
 	 */
 	public function replace(
 		ReplaceTicketRequest $request,
@@ -86,7 +139,13 @@ class TicketController extends ApiController
 	}
 
 	/**
-	 * Remove the specified resource from storage.
+	 * Detlete a ticket
+	 * 
+	 * Remove the specified ticket from storage.
+	 * 
+	 * @group Managing Tickets
+	 * 
+	 * @response 200 {}
 	 */
 	public function destroy(Ticket $ticket)
 	{

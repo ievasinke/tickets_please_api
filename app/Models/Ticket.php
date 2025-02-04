@@ -10,14 +10,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Ticket extends Model
 {
-    /** @use HasFactory<\Database\Factories\TicketFactory> */
-    use HasFactory;
+	/** @use HasFactory<\Database\Factories\TicketFactory> */
+	use HasFactory;
 
 	protected $fillable = [
 		'title',
 		'description',
 		'status',
-		'user_id',
 	];
 
 	public function author(): BelongsTo
