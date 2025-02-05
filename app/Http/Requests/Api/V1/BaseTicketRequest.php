@@ -27,6 +27,7 @@ class BaseTicketRequest extends FormRequest
 
 		return $attributesToUpdate;
 	}
+
 	public function messages(): array
 	{
 		return [

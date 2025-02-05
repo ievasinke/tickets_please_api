@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Tickets Please API Documentation",
-        "_postman_id": "11715f60-7614-47c6-b3a7-4822ea9b5b77",
+        "_postman_id": "69931ae7-54a3-4a72-80eb-65f393172d0e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"daniel.ernestina@example.org\",\"password\":\"!N#G(Q?gK\"}"
+                            "raw": "{\"email\":\"georgianna.bergstrom@example.com\",\"password\":\"_vj|hQM&M(\"}"
                         },
                         "description": "Authenticate the user and returns the user's API token.",
                         "auth": {
@@ -135,7 +135,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"errors\":{\"type\":\"AuthenticationException\",\"status\":401,\"message\":\"Unauthenticated.\"}}",
+                            "body": "{\"id\":11,\"name\":\"The Manager\",\"email\":\"manager@manager.com\",\"email_verified_at\":null,\"is_manager\":true,\"created_at\":\"2025-01-21T13:57:48.000000Z\",\"updated_at\":\"2025-01-21T13:57:48.000000Z\"}",
                             "name": ""
                         }
                     ]
@@ -180,7 +180,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"errors\":{\"type\":\"AuthenticationException\",\"status\":401,\"message\":\"Unauthenticated.\"}}",
+                            "body": "{\"id\":11,\"name\":\"The Manager\",\"email\":\"manager@manager.com\",\"email_verified_at\":null,\"is_manager\":true,\"created_at\":\"2025-01-21T13:57:48.000000Z\",\"updated_at\":\"2025-01-21T13:57:48.000000Z\"}",
                             "name": ""
                         }
                     ]
@@ -201,7 +201,7 @@
                                 {
                                     "key": "sort",
                                     "value": "sort%3Dtitle%2C-createdAt",
-                                    "description": "Data field(s) to sort by. Separate multiple fields with a commas. Denote descending soert with a minus sign.",
+                                    "description": "Data field(s) to sort by. Separate multiple fields with a commas. Denote descending sort with a minus sign.",
                                     "disabled": false
                                 },
                                 {
@@ -213,7 +213,7 @@
                                 {
                                     "key": "filter%5Btitle%5D",
                                     "value": "%2Afix%2A",
-                                    "description": "Filter by title. Wildcards are suppoted.",
+                                    "description": "Filter by title. Wildcards are supported.",
                                     "disabled": false
                                 }
                             ],
@@ -250,7 +250,42 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"errors\":{\"type\":\"AuthenticationException\",\"status\":401,\"message\":\"Unauthenticated.\"}}",
+                            "body": "{\"data\":[{\"type\":\"ticket\",\"id\":133,\"attributes\":{\"title\":\"Ticket #111\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:52:27.000000Z\",\"updated_at\":\"2025-02-05T18:52:27.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/133\"}},{\"type\":\"ticket\",\"id\":132,\"attributes\":{\"title\":\"Ticket #11\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:49:29.000000Z\",\"updated_at\":\"2025-02-05T18:49:29.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":3},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/132\"}},{\"type\":\"ticket\",\"id\":131,\"attributes\":{\"title\":\"Ticket #11\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:48:24.000000Z\",\"updated_at\":\"2025-02-05T18:48:24.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":3},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/131\"}},{\"type\":\"ticket\",\"id\":130,\"attributes\":{\"title\":\"Ticket #11\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:48:21.000000Z\",\"updated_at\":\"2025-02-05T18:48:21.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":3},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/130\"}},{\"type\":\"ticket\",\"id\":129,\"attributes\":{\"title\":\"Ticket #11\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:47:57.000000Z\",\"updated_at\":\"2025-02-05T18:47:57.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":3},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/129\"}},{\"type\":\"ticket\",\"id\":128,\"attributes\":{\"title\":\"Ticket #11\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:42:03.000000Z\",\"updated_at\":\"2025-02-05T18:42:03.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":3},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/128\"}},{\"type\":\"ticket\",\"id\":127,\"attributes\":{\"title\":\"Ticket #10\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:41:50.000000Z\",\"updated_at\":\"2025-02-05T18:41:50.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/127\"}},{\"type\":\"ticket\",\"id\":126,\"attributes\":{\"title\":\"Ticket #9\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:38:42.000000Z\",\"updated_at\":\"2025-02-05T18:38:42.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/126\"}},{\"type\":\"ticket\",\"id\":125,\"attributes\":{\"title\":\"Ticket #9\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:37:51.000000Z\",\"updated_at\":\"2025-02-05T18:37:51.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/125\"}},{\"type\":\"ticket\",\"id\":124,\"attributes\":{\"title\":\"Ticket #9\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:37:03.000000Z\",\"updated_at\":\"2025-02-05T18:37:03.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":2},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/2\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/124\"}},{\"type\":\"ticket\",\"id\":123,\"attributes\":{\"title\":\"Ticket #9\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:35:20.000000Z\",\"updated_at\":\"2025-02-05T18:35:20.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/123\"}},{\"type\":\"ticket\",\"id\":122,\"attributes\":{\"title\":\"Ticket #9\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:31:04.000000Z\",\"updated_at\":\"2025-02-05T18:31:04.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":2},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/2\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/122\"}},{\"type\":\"ticket\",\"id\":121,\"attributes\":{\"title\":\"Ticket #9\",\"status\":\"X\",\"created_at\":\"2025-02-05T18:30:54.000000Z\",\"updated_at\":\"2025-02-05T18:30:54.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/121\"}},{\"type\":\"ticket\",\"id\":120,\"attributes\":{\"title\":\"Create ticket title\",\"status\":\"X\",\"created_at\":\"2025-02-04T14:27:10.000000Z\",\"updated_at\":\"2025-02-04T14:27:10.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/120\"}},{\"type\":\"ticket\",\"id\":119,\"attributes\":{\"title\":\"Ticket #8\",\"status\":\"X\",\"created_at\":\"2025-01-30T15:47:32.000000Z\",\"updated_at\":\"2025-01-30T15:47:32.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":2},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/2\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/119\"}}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=9\",\"prev\":null,\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":9,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=6\",\"label\":\"6\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=7\",\"label\":\"7\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=8\",\"label\":\"8\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=9\",\"label\":\"9\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\",\"per_page\":15,\"to\":15,\"total\":126}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a ticket",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tickets",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/tickets"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"attributes\":{\"title\":null,\"description\":null,\"status\":null},\"relationships\":{\"author\":{\"data\":{\"id\":null}}}}}"
+                        },
+                        "description": "Creates a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"data\":{\n\t\"type\":\"ticket\",\n\t\"id\":105,\n\t\t\"attributes\":{\n\t\t\t\"title\":\"Create ticket title\",\n\t\t\t\"description\":\"This ticket has a description\",\n\t\t\t\"status\":\"A\",\n\t\t\t\"created_at\":\"2025-01-30T12:38:32.000000Z\",\n\t\t\t\"updated_at\":\"2025-01-30T12:38:32.000000Z\"},\n\t\t\t\"relationships\":{\n\t\t\t\t\"author\":{\n\t\t\t\t\t\"data\":{\n\t\t\t\t\t\t\"type\":\"user\",\n\t\t\t\t\t\t\"id\":\"1\"\n\t\t\t\t\t},\n\t\t\t\t\t\"links\":{\n\t\t\t\t\t\t\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\"links\":{\n\t\t\t\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/105\"\n\t\t}\n\t}\n}",
                             "name": ""
                         }
                     ]
@@ -303,13 +338,13 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"errors\":{\"type\":\"AuthenticationException\",\"status\":401,\"message\":\"Unauthenticated.\"}}",
+                            "body": "{\"data\":{\"type\":\"ticket\",\"id\":1,\"attributes\":{\"title\":\"cupiditate dolorem qui\",\"description\":\"Vel nemo pariatur voluptatem consequuntur sit autem et sunt. Nulla non sunt aut ex iusto. Nobis repellendus ut alias non assumenda beatae. Quae nesciunt minus quo qui asperiores.\",\"status\":\"X\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T14:06:17.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":3},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/1\"}}}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "Detlete a ticket",
+                    "name": "Delete a ticket",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -378,7 +413,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"quis\",\"description\":\"Quibusdam est repellat ea modi temporibus et molestiae voluptatem.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":2}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"qui\",\"description\":\"Blanditiis quasi illum ut.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":{\"id\":6}}}}}"
                         },
                         "description": "Replace the specified ticket in storage."
                     },
@@ -414,7 +449,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"laboriosam\",\"description\":\"Sit corrupti nihil consectetur sit sint est necessitatibus.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"distinctio\",\"description\":\"Animi aut est sequi exercitationem repellendus.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":8}}}}}"
                         },
                         "description": "Update the specified ticket in storage."
                     },
@@ -486,10 +521,52 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{ \/\/TODO: Add response body }",
+                            "body": "{\"data\":[{\"type\":\"ticket\",\"id\":6,\"attributes\":{\"title\":\"PATCH Request works\",\"status\":\"C\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T16:08:19.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/6\"}},{\"type\":\"ticket\",\"id\":29,\"attributes\":{\"title\":\"repellat eligendi sequi\",\"status\":\"H\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/29\"}},{\"type\":\"ticket\",\"id\":32,\"attributes\":{\"title\":\"error repudiandae alias\",\"status\":\"X\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/32\"}},{\"type\":\"ticket\",\"id\":37,\"attributes\":{\"title\":\"quisquam alias earum\",\"status\":\"A\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/37\"}},{\"type\":\"ticket\",\"id\":42,\"attributes\":{\"title\":\"repellendus ipsam et\",\"status\":\"H\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/42\"}},{\"type\":\"ticket\",\"id\":45,\"attributes\":{\"title\":\"quia saepe cupiditate\",\"status\":\"X\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/45\"}},{\"type\":\"ticket\",\"id\":48,\"attributes\":{\"title\":\"vel ad quia\",\"status\":\"X\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/48\"}},{\"type\":\"ticket\",\"id\":55,\"attributes\":{\"title\":\"eos minima et\",\"status\":\"C\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/55\"}},{\"type\":\"ticket\",\"id\":57,\"attributes\":{\"title\":\"perferendis adipisci voluptates\",\"status\":\"H\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/57\"}},{\"type\":\"ticket\",\"id\":69,\"attributes\":{\"title\":\"itaque dolor quidem\",\"status\":\"A\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/69\"}},{\"type\":\"ticket\",\"id\":81,\"attributes\":{\"title\":\"non fuga sequi\",\"status\":\"H\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/81\"}},{\"type\":\"ticket\",\"id\":84,\"attributes\":{\"title\":\"a quia aliquam\",\"status\":\"C\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/84\"}},{\"type\":\"ticket\",\"id\":96,\"attributes\":{\"title\":\"magni ut commodi\",\"status\":\"A\",\"created_at\":\"2025-01-21T13:57:47.000000Z\",\"updated_at\":\"2025-01-21T13:57:47.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/96\"}},{\"type\":\"ticket\",\"id\":101,\"attributes\":{\"title\":\"Replace this title\",\"status\":\"A\",\"created_at\":\"2025-01-21T15:07:48.000000Z\",\"updated_at\":\"2025-01-21T15:07:48.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/101\"}},{\"type\":\"ticket\",\"id\":102,\"attributes\":{\"title\":\"a Ticket\",\"status\":\"A\",\"created_at\":\"2025-01-21T16:01:05.000000Z\",\"updated_at\":\"2025-01-21T16:01:05.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/102\"}}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\\\/tickets?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\\\/tickets?page=2\",\"prev\":null,\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\\\/tickets?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":2,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\\\/tickets?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\\\/tickets?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\\\/tickets?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\\\/tickets\",\"per_page\":15,\"to\":15,\"total\":28}}",
                             "name": ""
                         }
                     ]
+                },
+                {
+                    "name": "Create a ticket",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/authors\/:author_id\/tickets",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/authors\/:author_id\/tickets",
+                            "variable": [
+                                {
+                                    "id": "author_id",
+                                    "key": "author_id",
+                                    "value": "1",
+                                    "description": "The ID of the author."
+                                },
+                                {
+                                    "id": "authorId",
+                                    "key": "authorId",
+                                    "value": "",
+                                    "description": "The author's ID."
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"attributes\":{\"title\":null,\"description\":null,\"status\":null}},\"author\":null}"
+                        },
+                        "description": "Creates a ticket for a specific user."
+                    },
+                    "response": []
                 },
                 {
                     "name": "Delete an author's ticket",
@@ -597,7 +674,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"iure\",\"description\":\"Saepe quaerat iste et aut.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":14}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"ipsum\",\"description\":\"Quam et est voluptas dolores ut.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":{\"id\":18}}}}}"
                         },
                         "description": "Replaces a ticket for a specific user."
                     },
@@ -658,7 +735,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"aut\",\"description\":\"Sunt labore deleniti omnis nam culpa hic et.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"molestiae\",\"description\":\"Commodi iste earum cum qui dolorum sint itaque.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":{\"id\":5}}}}}"
                         },
                         "description": "Update an author's ticket."
                     },
@@ -729,7 +806,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"errors\":{\"type\":\"AuthenticationException\",\"status\":401,\"message\":\"Unauthenticated.\"}}",
+                            "body": "{\"data\":[{\"type\":\"user\",\"id\":1,\"attributes\":{\"name\":\"Dr. Rigoberto Renner IV\",\"email\":\"corbin.wolff@example.com\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}},{\"type\":\"user\",\"id\":2,\"attributes\":{\"name\":\"Electa Mertz\",\"email\":\"mcormier@example.org\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/2\"}},{\"type\":\"user\",\"id\":3,\"attributes\":{\"name\":\"Ms. Anne Gleichner\",\"email\":\"bhodkiewicz@example.com\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}},{\"type\":\"user\",\"id\":4,\"attributes\":{\"name\":\"Eleazar Johns\",\"email\":\"melyssa.lebsack@example.com\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/4\"}},{\"type\":\"user\",\"id\":5,\"attributes\":{\"name\":\"Cheyanne Leffler\",\"email\":\"considine.pedro@example.net\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/5\"}},{\"type\":\"user\",\"id\":6,\"attributes\":{\"name\":\"Krystina Leannon\",\"email\":\"rkihn@example.net\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/6\"}},{\"type\":\"user\",\"id\":7,\"attributes\":{\"name\":\"Dr. Mary Bogan Sr.\",\"email\":\"maggio.brandt@example.com\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/7\"}},{\"type\":\"user\",\"id\":8,\"attributes\":{\"name\":\"Jaclyn Sauer\",\"email\":\"henry42@example.net\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/8\"}},{\"type\":\"user\",\"id\":9,\"attributes\":{\"name\":\"Prof. Madisyn Stroman\",\"email\":\"kohler.maudie@example.com\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/9\"}},{\"type\":\"user\",\"id\":10,\"attributes\":{\"name\":\"Prof. Berta McLaughlin PhD\",\"email\":\"camilla98@example.com\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/10\"}},{\"type\":\"user\",\"id\":11,\"attributes\":{\"name\":\"The Manager\",\"email\":\"manager@manager.com\",\"isManager\":true},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/11\"}},{\"type\":\"user\",\"id\":14,\"attributes\":{\"name\":\"My User\",\"email\":\"user@user.com\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/14\"}}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/users?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/users?page=1\",\"prev\":null,\"next\":null},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":1,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/users?page=1\",\"label\":\"1\",\"active\":true},{\"url\":null,\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/users\",\"per_page\":15,\"to\":12,\"total\":12}}",
                             "name": ""
                         }
                     ]
@@ -756,7 +833,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"name\":\"aut\",\"email\":\"ciara.donnelly@example.net\",\"isManager\":false,\"password\":\"bW*>]..{DdkP\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"name\":\"sunt\",\"email\":\"bgibson@example.net\",\"isManager\":false,\"password\":\"b>9@=669V!}\"}}}"
                         },
                         "description": ""
                     },
@@ -817,7 +894,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"errors\":{\"type\":\"AuthenticationException\",\"status\":401,\"message\":\"Unauthenticated.\"}}",
+                            "body": "{\"data\":{\"type\":\"user\",\"id\":1,\"attributes\":{\"name\":\"Dr. Rigoberto Renner IV\",\"email\":\"corbin.wolff@example.com\",\"isManager\":false},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}}",
                             "name": ""
                         }
                     ]
@@ -892,7 +969,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"name\":\"deserunt\",\"email\":\"dejon21@example.org\",\"isManager\":true,\"password\":\"_;@^!]8x>qBH}=3`<[0K\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"name\":\"quas\",\"email\":\"dubuque.anderson@example.net\",\"isManager\":false,\"password\":\"Dmg;L_Sr7~Ol<\"}}}"
                         },
                         "description": "Replace the specified user."
                     },
@@ -935,7 +1012,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"name\":\"iure\",\"email\":\"tstark@example.net\",\"isManager\":true,\"password\":\"p`\\\/F_TjSYaL_\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"name\":\"distinctio\",\"email\":\"tevin03@example.org\",\"isManager\":false,\"password\":\"^XG<E=k[L,(0lO\"}}}"
                         },
                         "description": ""
                     },
@@ -994,7 +1071,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"errors\":{\"type\":\"AuthenticationException\",\"status\":401,\"message\":\"Unauthenticated.\"}}",
+                            "body": "{\"data\":[{\"type\":\"user\",\"id\":1,\"attributes\":{\"name\":\"Dr. Rigoberto Renner IV\",\"email\":\"corbin.wolff@example.com\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}},{\"type\":\"user\",\"id\":2,\"attributes\":{\"name\":\"Electa Mertz\",\"email\":\"mcormier@example.org\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/2\"}},{\"type\":\"user\",\"id\":3,\"attributes\":{\"name\":\"Ms. Anne Gleichner\",\"email\":\"bhodkiewicz@example.com\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}},{\"type\":\"user\",\"id\":4,\"attributes\":{\"name\":\"Eleazar Johns\",\"email\":\"melyssa.lebsack@example.com\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/4\"}},{\"type\":\"user\",\"id\":5,\"attributes\":{\"name\":\"Cheyanne Leffler\",\"email\":\"considine.pedro@example.net\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/5\"}},{\"type\":\"user\",\"id\":6,\"attributes\":{\"name\":\"Krystina Leannon\",\"email\":\"rkihn@example.net\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/6\"}},{\"type\":\"user\",\"id\":7,\"attributes\":{\"name\":\"Dr. Mary Bogan Sr.\",\"email\":\"maggio.brandt@example.com\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/7\"}},{\"type\":\"user\",\"id\":8,\"attributes\":{\"name\":\"Jaclyn Sauer\",\"email\":\"henry42@example.net\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/8\"}},{\"type\":\"user\",\"id\":9,\"attributes\":{\"name\":\"Prof. Madisyn Stroman\",\"email\":\"kohler.maudie@example.com\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/9\"}},{\"type\":\"user\",\"id\":10,\"attributes\":{\"name\":\"Prof. Berta McLaughlin PhD\",\"email\":\"camilla98@example.com\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/10\"}},{\"type\":\"user\",\"id\":11,\"attributes\":{\"name\":\"The Manager\",\"email\":\"manager@manager.com\",\"isManager\":true,\"emailVerifiedAt\":null,\"createdAt\":\"2025-01-21T13:57:48.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:48.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/11\"}}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=9\",\"prev\":null,\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":9,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=6\",\"label\":\"6\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=7\",\"label\":\"7\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=8\",\"label\":\"8\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=9\",\"label\":\"9\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\",\"per_page\":15,\"to\":11,\"total\":126}}",
                             "name": ""
                         }
                     ]
@@ -1047,7 +1124,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"errors\":{\"type\":\"AuthenticationException\",\"status\":401,\"message\":\"Unauthenticated.\"}}",
+                            "body": "{\"data\":{\"type\":\"user\",\"id\":1,\"attributes\":{\"name\":\"Dr. Rigoberto Renner IV\",\"email\":\"corbin.wolff@example.com\",\"isManager\":false,\"emailVerifiedAt\":\"2025-01-21T13:57:47.000000Z\",\"createdAt\":\"2025-01-21T13:57:47.000000Z\",\"udpatedAt\":\"2025-01-21T13:57:47.000000Z\"},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}}",
                             "name": ""
                         }
                     ]

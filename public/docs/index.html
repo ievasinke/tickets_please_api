@@ -100,11 +100,14 @@
                                                     <li class="tocify-item level-2" data-unique="managing-tickets-GETapi-v1-tickets">
                                 <a href="#managing-tickets-GETapi-v1-tickets">Get all tickets</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="managing-tickets-POSTapi-v1-tickets">
+                                <a href="#managing-tickets-POSTapi-v1-tickets">Create a ticket</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="managing-tickets-GETapi-v1-tickets--id-">
                                 <a href="#managing-tickets-GETapi-v1-tickets--id-">Get a specific ticket</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="managing-tickets-DELETEapi-v1-tickets--id-">
-                                <a href="#managing-tickets-DELETEapi-v1-tickets--id-">Detlete a ticket</a>
+                                <a href="#managing-tickets-DELETEapi-v1-tickets--id-">Delete a ticket</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="managing-tickets-PUTapi-v1-tickets--ticket_id-">
                                 <a href="#managing-tickets-PUTapi-v1-tickets--ticket_id-">Replace a ticket</a>
@@ -121,6 +124,9 @@
                                     <ul id="tocify-subheader-managing-tickets-by-author" class="tocify-subheader">
                                                     <li class="tocify-item level-2" data-unique="managing-tickets-by-author-GETapi-v1-authors--author_id--tickets">
                                 <a href="#managing-tickets-by-author-GETapi-v1-authors--author_id--tickets">Get all tickets</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="managing-tickets-by-author-POSTapi-v1-authors--author_id--tickets">
+                                <a href="#managing-tickets-by-author-POSTapi-v1-authors--author_id--tickets">Create a ticket</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="managing-tickets-by-author-DELETEapi-v1-authors--author_id--tickets--id-">
                                 <a href="#managing-tickets-by-author-DELETEapi-v1-authors--author_id--tickets--id-">Delete an author's ticket</a>
@@ -180,7 +186,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: February 4, 2025</li>
+        <li>Last updated: February 5, 2025</li>
     </ul>
 </div>
 
@@ -221,8 +227,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"daniel.ernestina@example.org\",
-    \"password\": \"!N#G(Q?gK\"
+    \"email\": \"georgianna.bergstrom@example.com\",
+    \"password\": \"_vj|hQM&amp;M(\"
 }"
 </code></pre></div>
 
@@ -238,8 +244,8 @@ const headers = {
 };
 
 let body = {
-    "email": "daniel.ernestina@example.org",
-    "password": "!N#G(Q?gK"
+    "email": "georgianna.bergstrom@example.com",
+    "password": "_vj|hQM&amp;M("
 };
 
 fetch(url, {
@@ -341,10 +347,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="daniel.ernestina@example.org"
+               value="georgianna.bergstrom@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>daniel.ernestina@example.org</code></p>
+<p>Must be a valid email address. Example: <code>georgianna.bergstrom@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -352,10 +358,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="!N#G(Q?gK"
+               value="_vj|hQM&M("
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>!N#G(Q?gK</code></p>
+<p>Must be at least 8 characters. Example: <code>_vj|hQM&amp;M(</code></p>
         </div>
         </form>
 
@@ -544,11 +550,13 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;errors&quot;: {
-        &quot;type&quot;: &quot;AuthenticationException&quot;,
-        &quot;status&quot;: 401,
-        &quot;message&quot;: &quot;Unauthenticated.&quot;
-    }
+    &quot;id&quot;: 11,
+    &quot;name&quot;: &quot;The Manager&quot;,
+    &quot;email&quot;: &quot;manager@manager.com&quot;,
+    &quot;email_verified_at&quot;: null,
+    &quot;is_manager&quot;: true,
+    &quot;created_at&quot;: &quot;2025-01-21T13:57:48.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-01-21T13:57:48.000000Z&quot;
 }</code>
  </pre>
     </span>
@@ -686,11 +694,13 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;errors&quot;: {
-        &quot;type&quot;: &quot;AuthenticationException&quot;,
-        &quot;status&quot;: 401,
-        &quot;message&quot;: &quot;Unauthenticated.&quot;
-    }
+    &quot;id&quot;: 11,
+    &quot;name&quot;: &quot;The Manager&quot;,
+    &quot;email&quot;: &quot;manager@manager.com&quot;,
+    &quot;email_verified_at&quot;: null,
+    &quot;is_manager&quot;: true,
+    &quot;created_at&quot;: &quot;2025-01-21T13:57:48.000000Z&quot;,
+    &quot;updated_at&quot;: &quot;2025-01-21T13:57:48.000000Z&quot;
 }</code>
  </pre>
     </span>
@@ -839,10 +849,439 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;errors&quot;: {
-        &quot;type&quot;: &quot;AuthenticationException&quot;,
-        &quot;status&quot;: 401,
-        &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: [
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 133,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #111&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:52:27.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:52:27.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/133&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 132,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #11&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:49:29.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:49:29.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/3&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/132&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 131,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #11&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:48:24.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:48:24.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/3&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/131&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 130,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #11&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:48:21.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:48:21.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/3&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/130&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 129,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #11&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:47:57.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:47:57.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/3&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/129&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 128,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #11&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:42:03.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:42:03.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 3
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/3&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/128&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 127,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #10&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:41:50.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:41:50.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/127&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 126,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #9&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:38:42.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:38:42.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/126&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 125,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #9&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:37:51.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:37:51.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/125&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 124,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #9&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:37:03.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:37:03.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/2&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/124&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 123,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #9&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:35:20.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:35:20.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/123&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 122,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #9&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:31:04.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:31:04.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/2&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/122&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 121,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #9&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-05T18:30:54.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-05T18:30:54.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/121&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 120,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Create ticket title&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-02-04T14:27:10.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-02-04T14:27:10.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/120&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 119,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Ticket #8&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-01-30T15:47:32.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-30T15:47:32.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 2
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/2&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/119&quot;
+            }
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost/api/v1/tickets?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost/api/v1/tickets?page=9&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: &quot;http://localhost/api/v1/tickets?page=2&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 9,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=2&quot;,
+                &quot;label&quot;: &quot;2&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=3&quot;,
+                &quot;label&quot;: &quot;3&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=4&quot;,
+                &quot;label&quot;: &quot;4&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=5&quot;,
+                &quot;label&quot;: &quot;5&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=6&quot;,
+                &quot;label&quot;: &quot;6&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=7&quot;,
+                &quot;label&quot;: &quot;7&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=8&quot;,
+                &quot;label&quot;: &quot;8&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=9&quot;,
+                &quot;label&quot;: &quot;9&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/tickets?page=2&quot;,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost/api/v1/tickets&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 15,
+        &quot;total&quot;: 126
     }
 }</code>
  </pre>
@@ -937,7 +1376,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="sort=title,-createdAt"
                data-component="query">
     <br>
-<p>Data field(s) to sort by. Separate multiple fields with a commas. Denote descending soert with a minus sign. Example: <code>sort=title,-createdAt</code></p>
+<p>Data field(s) to sort by. Separate multiple fields with a commas. Denote descending sort with a minus sign. Example: <code>sort=title,-createdAt</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>filter[status]</code></b>&nbsp;&nbsp;
@@ -959,9 +1398,301 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="*fix*"
                data-component="query">
     <br>
-<p>Filter by title. Wildcards are suppoted. Example: <code>*fix*</code></p>
+<p>Filter by title. Wildcards are supported. Example: <code>*fix*</code></p>
             </div>
                 </form>
+
+                    <h2 id="managing-tickets-POSTapi-v1-tickets">Create a ticket</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Creates a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user.</p>
+
+<span id="example-requests-POSTapi-v1-tickets">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/tickets" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"data\": {
+        \"attributes\": {
+            \"title\": null,
+            \"description\": null,
+            \"status\": null
+        },
+        \"relationships\": {
+            \"author\": {
+                \"data\": {
+                    \"id\": null
+                }
+            }
+        }
+    }
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/tickets"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "data": {
+        "attributes": {
+            "title": null,
+            "description": null,
+            "status": null
+        },
+        "relationships": {
+            "author": {
+                "data": {
+                    "id": null
+                }
+            }
+        }
+    }
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-tickets">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;type&quot;: &quot;ticket&quot;,
+        &quot;id&quot;: 105,
+        &quot;attributes&quot;: {
+            &quot;title&quot;: &quot;Create ticket title&quot;,
+            &quot;description&quot;: &quot;This ticket has a description&quot;,
+            &quot;status&quot;: &quot;A&quot;,
+            &quot;created_at&quot;: &quot;2025-01-30T12:38:32.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-01-30T12:38:32.000000Z&quot;
+        },
+        &quot;relationships&quot;: {
+            &quot;author&quot;: {
+                &quot;data&quot;: {
+                    &quot;type&quot;: &quot;user&quot;,
+                    &quot;id&quot;: &quot;1&quot;
+                },
+                &quot;links&quot;: {
+                    &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                }
+            }
+        },
+        &quot;links&quot;: {
+            &quot;self&quot;: &quot;http://localhost/api/v1/tickets/105&quot;
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-tickets" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-tickets"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-tickets"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-tickets" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-tickets">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-tickets" data-method="POST"
+      data-path="api/v1/tickets"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-tickets', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-tickets"
+                    onclick="tryItOut('POSTapi-v1-tickets');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-tickets"
+                    onclick="cancelTryOut('POSTapi-v1-tickets');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-tickets"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/tickets</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-tickets"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-tickets"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-tickets"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>attributes</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.title"                data-endpoint="POSTapi-v1-tickets"
+               value=""
+               data-component="body">
+    <br>
+<p>The ticket's title (method).</p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.description"                data-endpoint="POSTapi-v1-tickets"
+               value=""
+               data-component="body">
+    <br>
+<p>The ticket's description.</p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.status"                data-endpoint="POSTapi-v1-tickets"
+               value=""
+               data-component="body">
+    <br>
+<p>The ticket's title status.</p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
+                    </div>
+                                    </details>
+        </div>
+                                                                    <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>relationships</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style=" margin-left: 28px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>author</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style=" margin-left: 42px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 56px; clear: unset;">
+                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="data.relationships.author.data.id"                data-endpoint="POSTapi-v1-tickets"
+               value=""
+               data-component="body">
+    <br>
+<p>The author assign to the ticket. The <code>id</code> of an existing record in the users table.</p>
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+                                        </details>
+        </div>
+                                        </details>
+        </div>
+        </form>
 
                     <h2 id="managing-tickets-GETapi-v1-tickets--id-">Get a specific ticket</h2>
 
@@ -1015,10 +1746,30 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;errors&quot;: {
-        &quot;type&quot;: &quot;AuthenticationException&quot;,
-        &quot;status&quot;: 401,
-        &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: {
+        &quot;type&quot;: &quot;ticket&quot;,
+        &quot;id&quot;: 1,
+        &quot;attributes&quot;: {
+            &quot;title&quot;: &quot;cupiditate dolorem qui&quot;,
+            &quot;description&quot;: &quot;Vel nemo pariatur voluptatem consequuntur sit autem et sunt. Nulla non sunt aut ex iusto. Nobis repellendus ut alias non assumenda beatae. Quae nesciunt minus quo qui asperiores.&quot;,
+            &quot;status&quot;: &quot;X&quot;,
+            &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-01-21T14:06:17.000000Z&quot;
+        },
+        &quot;relationships&quot;: {
+            &quot;author&quot;: {
+                &quot;data&quot;: {
+                    &quot;type&quot;: &quot;user&quot;,
+                    &quot;id&quot;: 3
+                },
+                &quot;links&quot;: {
+                    &quot;self&quot;: &quot;http://localhost/api/v1/authors/3&quot;
+                }
+            }
+        },
+        &quot;links&quot;: {
+            &quot;self&quot;: &quot;http://localhost/api/v1/tickets/1&quot;
+        }
     }
 }</code>
  </pre>
@@ -1117,7 +1868,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="managing-tickets-DELETEapi-v1-tickets--id-">Detlete a ticket</h2>
+                    <h2 id="managing-tickets-DELETEapi-v1-tickets--id-">Delete a ticket</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -1279,14 +2030,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"quis\",
-            \"description\": \"Quibusdam est repellat ea modi temporibus et molestiae voluptatem.\",
-            \"status\": \"C\"
+            \"title\": \"qui\",
+            \"description\": \"Blanditiis quasi illum ut.\",
+            \"status\": \"H\"
         },
         \"relationships\": {
             \"author\": {
                 \"data\": {
-                    \"id\": 2
+                    \"id\": 6
                 }
             }
         }
@@ -1309,14 +2060,14 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "quis",
-            "description": "Quibusdam est repellat ea modi temporibus et molestiae voluptatem.",
-            "status": "C"
+            "title": "qui",
+            "description": "Blanditiis quasi illum ut.",
+            "status": "H"
         },
         "relationships": {
             "author": {
                 "data": {
-                    "id": 2
+                    "id": 6
                 }
             }
         }
@@ -1450,10 +2201,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="quis"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>quis</code></p>
+<p>Example: <code>qui</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1461,10 +2212,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="Quibusdam est repellat ea modi temporibus et molestiae voluptatem."
+               value="Blanditiis quasi illum ut."
                data-component="body">
     <br>
-<p>Example: <code>Quibusdam est repellat ea modi temporibus et molestiae voluptatem.</code></p>
+<p>Example: <code>Blanditiis quasi illum ut.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1472,10 +2223,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="C"
+               value="H"
                data-component="body">
     <br>
-<p>Example: <code>C</code></p>
+<p>Example: <code>H</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -1514,10 +2265,10 @@ Must be one of:
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="data.relationships.author.data.id"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="2"
+               value="6"
                data-component="body">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>6</code></p>
                     </div>
                                     </details>
         </div>
@@ -1550,13 +2301,15 @@ Must be one of:
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"laboriosam\",
-            \"description\": \"Sit corrupti nihil consectetur sit sint est necessitatibus.\",
-            \"status\": \"X\"
+            \"title\": \"distinctio\",
+            \"description\": \"Animi aut est sequi exercitationem repellendus.\",
+            \"status\": \"A\"
         },
         \"relationships\": {
             \"author\": {
-                \"data\": []
+                \"data\": {
+                    \"id\": 8
+                }
             }
         }
     }
@@ -1578,13 +2331,15 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "laboriosam",
-            "description": "Sit corrupti nihil consectetur sit sint est necessitatibus.",
-            "status": "X"
+            "title": "distinctio",
+            "description": "Animi aut est sequi exercitationem repellendus.",
+            "status": "A"
         },
         "relationships": {
             "author": {
-                "data": []
+                "data": {
+                    "id": 8
+                }
             }
         }
     }
@@ -1717,10 +2472,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PATCHapi-v1-tickets--ticket_id-"
-               value="laboriosam"
+               value="distinctio"
                data-component="body">
     <br>
-<p>Example: <code>laboriosam</code></p>
+<p>Example: <code>distinctio</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1728,10 +2483,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PATCHapi-v1-tickets--ticket_id-"
-               value="Sit corrupti nihil consectetur sit sint est necessitatibus."
+               value="Animi aut est sequi exercitationem repellendus."
                data-component="body">
     <br>
-<p>Example: <code>Sit corrupti nihil consectetur sit sint est necessitatibus.</code></p>
+<p>Example: <code>Animi aut est sequi exercitationem repellendus.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1739,10 +2494,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PATCHapi-v1-tickets--ticket_id-"
-               value="X"
+               value="A"
                data-component="body">
     <br>
-<p>Example: <code>X</code></p>
+<p>Example: <code>A</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -1777,14 +2532,14 @@ Must be one of:
             </summary>
                                                 <div style="margin-left: 56px; clear: unset;">
                         <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
 <i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="data.relationships.author.data.id"                data-endpoint="PATCHapi-v1-tickets--ticket_id-"
-               value=""
+                <input type="number" style="display: none"
+               step="any"               name="data.relationships.author.data.id"                data-endpoint="PATCHapi-v1-tickets--ticket_id-"
+               value="8"
                data-component="body">
     <br>
-
+<p>Example: <code>8</code></p>
                     </div>
                                     </details>
         </div>
@@ -1850,7 +2605,407 @@ fetch(url, {
         </blockquote>
                 <pre>
 
-<code class="language-json" style="max-height: 300px;">{ //TODO: Add response body }</code>
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 6,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;PATCH Request works&quot;,
+                &quot;status&quot;: &quot;C&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T16:08:19.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/6&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 29,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;repellat eligendi sequi&quot;,
+                &quot;status&quot;: &quot;H&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/29&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 32,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;error repudiandae alias&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/32&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 37,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;quisquam alias earum&quot;,
+                &quot;status&quot;: &quot;A&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/37&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 42,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;repellendus ipsam et&quot;,
+                &quot;status&quot;: &quot;H&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/42&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 45,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;quia saepe cupiditate&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/45&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 48,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;vel ad quia&quot;,
+                &quot;status&quot;: &quot;X&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/48&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 55,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;eos minima et&quot;,
+                &quot;status&quot;: &quot;C&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/55&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 57,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;perferendis adipisci voluptates&quot;,
+                &quot;status&quot;: &quot;H&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/57&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 69,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;itaque dolor quidem&quot;,
+                &quot;status&quot;: &quot;A&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/69&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 81,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;non fuga sequi&quot;,
+                &quot;status&quot;: &quot;H&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/81&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 84,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;a quia aliquam&quot;,
+                &quot;status&quot;: &quot;C&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/84&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 96,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;magni ut commodi&quot;,
+                &quot;status&quot;: &quot;A&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/96&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 101,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;Replace this title&quot;,
+                &quot;status&quot;: &quot;A&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T15:07:48.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T15:07:48.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/101&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;ticket&quot;,
+            &quot;id&quot;: 102,
+            &quot;attributes&quot;: {
+                &quot;title&quot;: &quot;a Ticket&quot;,
+                &quot;status&quot;: &quot;A&quot;,
+                &quot;created_at&quot;: &quot;2025-01-21T16:01:05.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-01-21T16:01:05.000000Z&quot;
+            },
+            &quot;relationships&quot;: {
+                &quot;author&quot;: {
+                    &quot;data&quot;: {
+                        &quot;type&quot;: &quot;user&quot;,
+                        &quot;id&quot;: 1
+                    },
+                    &quot;links&quot;: {
+                        &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+                    }
+                }
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/tickets/102&quot;
+            }
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost/api/v1/authors/1/tickets?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost/api/v1/authors/1/tickets?page=2&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: &quot;http://localhost/api/v1/authors/1/tickets?page=2&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 2,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors/1/tickets?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors/1/tickets?page=2&quot;,
+                &quot;label&quot;: &quot;2&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors/1/tickets?page=2&quot;,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost/api/v1/authors/1/tickets&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 15,
+        &quot;total&quot;: 28
+    }
+}</code>
  </pre>
     </span>
 <span id="execution-results-GETapi-v1-authors--author_id--tickets" hidden>
@@ -1991,6 +3146,243 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Filter by email. Wildcards are supported.</p>
             </div>
                 </form>
+
+                    <h2 id="managing-tickets-by-author-POSTapi-v1-authors--author_id--tickets">Create a ticket</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Creates a ticket for a specific user.</p>
+
+<span id="example-requests-POSTapi-v1-authors--author_id--tickets">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/authors/1/tickets" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"data\": {
+        \"attributes\": {
+            \"title\": null,
+            \"description\": null,
+            \"status\": null
+        }
+    },
+    \"author\": null
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/authors/1/tickets"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "data": {
+        "attributes": {
+            "title": null,
+            "description": null,
+            "status": null
+        }
+    },
+    "author": null
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-authors--author_id--tickets">
+</span>
+<span id="execution-results-POSTapi-v1-authors--author_id--tickets" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-authors--author_id--tickets"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-authors--author_id--tickets"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-authors--author_id--tickets" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-authors--author_id--tickets">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-authors--author_id--tickets" data-method="POST"
+      data-path="api/v1/authors/{author_id}/tickets"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-authors--author_id--tickets', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-authors--author_id--tickets"
+                    onclick="tryItOut('POSTapi-v1-authors--author_id--tickets');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-authors--author_id--tickets"
+                    onclick="cancelTryOut('POSTapi-v1-authors--author_id--tickets');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-authors--author_id--tickets"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/authors/{author_id}/tickets</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>author_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="author_id"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the author. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>authorId</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="authorId"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value=""
+               data-component="url">
+    <br>
+<p>The author's ID.</p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>attributes</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.title"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value=""
+               data-component="body">
+    <br>
+<p>The ticket's title (method).</p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.description"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value=""
+               data-component="body">
+    <br>
+<p>The ticket's description.</p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.status"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value=""
+               data-component="body">
+    <br>
+<p>The ticket's title status.</p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>author</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="author"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
+               value=""
+               data-component="body">
+    <br>
+<p>The author assign to the ticket. The <code>id</code> of an existing record in the users table.</p>
+        </div>
+        </form>
 
                     <h2 id="managing-tickets-by-author-DELETEapi-v1-authors--author_id--tickets--id-">Delete an author&#039;s ticket</h2>
 
@@ -2187,14 +3579,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"iure\",
-            \"description\": \"Saepe quaerat iste et aut.\",
-            \"status\": \"A\"
+            \"title\": \"ipsum\",
+            \"description\": \"Quam et est voluptas dolores ut.\",
+            \"status\": \"H\"
         },
         \"relationships\": {
             \"author\": {
                 \"data\": {
-                    \"id\": 14
+                    \"id\": 18
                 }
             }
         }
@@ -2217,14 +3609,14 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "iure",
-            "description": "Saepe quaerat iste et aut.",
-            "status": "A"
+            "title": "ipsum",
+            "description": "Quam et est voluptas dolores ut.",
+            "status": "H"
         },
         "relationships": {
             "author": {
                 "data": {
-                    "id": 14
+                    "id": 18
                 }
             }
         }
@@ -2424,10 +3816,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PUTapi-v1-authors--author_id--tickets--ticket_id-"
-               value="iure"
+               value="ipsum"
                data-component="body">
     <br>
-<p>Example: <code>iure</code></p>
+<p>Example: <code>ipsum</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2435,10 +3827,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PUTapi-v1-authors--author_id--tickets--ticket_id-"
-               value="Saepe quaerat iste et aut."
+               value="Quam et est voluptas dolores ut."
                data-component="body">
     <br>
-<p>Example: <code>Saepe quaerat iste et aut.</code></p>
+<p>Example: <code>Quam et est voluptas dolores ut.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -2446,10 +3838,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PUTapi-v1-authors--author_id--tickets--ticket_id-"
-               value="A"
+               value="H"
                data-component="body">
     <br>
-<p>Example: <code>A</code></p>
+<p>Example: <code>H</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -2488,10 +3880,10 @@ Must be one of:
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="data.relationships.author.data.id"                data-endpoint="PUTapi-v1-authors--author_id--tickets--ticket_id-"
-               value="14"
+               value="18"
                data-component="body">
     <br>
-<p>Example: <code>14</code></p>
+<p>Example: <code>18</code></p>
                     </div>
                                     </details>
         </div>
@@ -2524,13 +3916,15 @@ Must be one of:
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"aut\",
-            \"description\": \"Sunt labore deleniti omnis nam culpa hic et.\",
-            \"status\": \"A\"
+            \"title\": \"molestiae\",
+            \"description\": \"Commodi iste earum cum qui dolorum sint itaque.\",
+            \"status\": \"X\"
         },
         \"relationships\": {
             \"author\": {
-                \"data\": []
+                \"data\": {
+                    \"id\": 5
+                }
             }
         }
     }
@@ -2552,13 +3946,15 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "aut",
-            "description": "Sunt labore deleniti omnis nam culpa hic et.",
-            "status": "A"
+            "title": "molestiae",
+            "description": "Commodi iste earum cum qui dolorum sint itaque.",
+            "status": "X"
         },
         "relationships": {
             "author": {
-                "data": []
+                "data": {
+                    "id": 5
+                }
             }
         }
     }
@@ -2724,10 +4120,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--ticket_id-"
-               value="aut"
+               value="molestiae"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>molestiae</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2735,10 +4131,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--ticket_id-"
-               value="Sunt labore deleniti omnis nam culpa hic et."
+               value="Commodi iste earum cum qui dolorum sint itaque."
                data-component="body">
     <br>
-<p>Example: <code>Sunt labore deleniti omnis nam culpa hic et.</code></p>
+<p>Example: <code>Commodi iste earum cum qui dolorum sint itaque.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -2746,10 +4142,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--ticket_id-"
-               value="A"
+               value="X"
                data-component="body">
     <br>
-<p>Example: <code>A</code></p>
+<p>Example: <code>X</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -2784,14 +4180,14 @@ Must be one of:
             </summary>
                                                 <div style="margin-left: 56px; clear: unset;">
                         <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
 <i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-                              name="data.relationships.author.data.id"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--ticket_id-"
-               value=""
+                <input type="number" style="display: none"
+               step="any"               name="data.relationships.author.data.id"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--ticket_id-"
+               value="5"
                data-component="body">
     <br>
-
+<p>Example: <code>5</code></p>
                     </div>
                                     </details>
         </div>
@@ -2865,10 +4261,183 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;errors&quot;: {
-        &quot;type&quot;: &quot;AuthenticationException&quot;,
-        &quot;status&quot;: 401,
-        &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: [
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 1,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Dr. Rigoberto Renner IV&quot;,
+                &quot;email&quot;: &quot;corbin.wolff@example.com&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 2,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Electa Mertz&quot;,
+                &quot;email&quot;: &quot;mcormier@example.org&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/2&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 3,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Ms. Anne Gleichner&quot;,
+                &quot;email&quot;: &quot;bhodkiewicz@example.com&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/3&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 4,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Eleazar Johns&quot;,
+                &quot;email&quot;: &quot;melyssa.lebsack@example.com&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/4&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 5,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Cheyanne Leffler&quot;,
+                &quot;email&quot;: &quot;considine.pedro@example.net&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/5&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 6,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Krystina Leannon&quot;,
+                &quot;email&quot;: &quot;rkihn@example.net&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/6&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 7,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Dr. Mary Bogan Sr.&quot;,
+                &quot;email&quot;: &quot;maggio.brandt@example.com&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/7&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 8,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Jaclyn Sauer&quot;,
+                &quot;email&quot;: &quot;henry42@example.net&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/8&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 9,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Prof. Madisyn Stroman&quot;,
+                &quot;email&quot;: &quot;kohler.maudie@example.com&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/9&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 10,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Prof. Berta McLaughlin PhD&quot;,
+                &quot;email&quot;: &quot;camilla98@example.com&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/10&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 11,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;The Manager&quot;,
+                &quot;email&quot;: &quot;manager@manager.com&quot;,
+                &quot;isManager&quot;: true
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/11&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 14,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;My User&quot;,
+                &quot;email&quot;: &quot;user@user.com&quot;,
+                &quot;isManager&quot;: false
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/14&quot;
+            }
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost/api/v1/users?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost/api/v1/users?page=1&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: null
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/users?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost/api/v1/users&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 12,
+        &quot;total&quot;: 12
     }
 }</code>
  </pre>
@@ -3010,10 +4579,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"name\": \"aut\",
-            \"email\": \"ciara.donnelly@example.net\",
+            \"name\": \"sunt\",
+            \"email\": \"bgibson@example.net\",
             \"isManager\": false,
-            \"password\": \"bW*&gt;]..{DdkP\"
+            \"password\": \"b&gt;9@=669V!}\"
         }
     }
 }"
@@ -3034,10 +4603,10 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "name": "aut",
-            "email": "ciara.donnelly@example.net",
+            "name": "sunt",
+            "email": "bgibson@example.net",
             "isManager": false,
-            "password": "bW*&gt;]..{DdkP"
+            "password": "b&gt;9@=669V!}"
         }
     }
 };
@@ -3177,10 +4746,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.name"                data-endpoint="POSTapi-v1-users"
-               value="aut"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>sunt</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -3188,10 +4757,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.email"                data-endpoint="POSTapi-v1-users"
-               value="ciara.donnelly@example.net"
+               value="bgibson@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>ciara.donnelly@example.net</code></p>
+<p>Must be a valid email address. Example: <code>bgibson@example.net</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>isManager</code></b>&nbsp;&nbsp;
@@ -3220,10 +4789,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.password"                data-endpoint="POSTapi-v1-users"
-               value="bW*>]..{DdkP"
+               value="b>9@=669V!}"
                data-component="body">
     <br>
-<p>Example: <code>bW*&gt;]..{DdkP</code></p>
+<p>Example: <code>b&gt;9@=669V!}</code></p>
                     </div>
                                     </details>
         </div>
@@ -3283,10 +4852,17 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;errors&quot;: {
-        &quot;type&quot;: &quot;AuthenticationException&quot;,
-        &quot;status&quot;: 401,
-        &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: {
+        &quot;type&quot;: &quot;user&quot;,
+        &quot;id&quot;: 1,
+        &quot;attributes&quot;: {
+            &quot;name&quot;: &quot;Dr. Rigoberto Renner IV&quot;,
+            &quot;email&quot;: &quot;corbin.wolff@example.com&quot;,
+            &quot;isManager&quot;: false
+        },
+        &quot;links&quot;: {
+            &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+        }
     }
 }</code>
  </pre>
@@ -3547,10 +5123,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"name\": \"deserunt\",
-            \"email\": \"dejon21@example.org\",
-            \"isManager\": true,
-            \"password\": \"_;@^!]8x&gt;qBH}=3`&lt;[0K\"
+            \"name\": \"quas\",
+            \"email\": \"dubuque.anderson@example.net\",
+            \"isManager\": false,
+            \"password\": \"Dmg;L_Sr7~Ol&lt;\"
         }
     }
 }"
@@ -3571,10 +5147,10 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "name": "deserunt",
-            "email": "dejon21@example.org",
-            "isManager": true,
-            "password": "_;@^!]8x&gt;qBH}=3`&lt;[0K"
+            "name": "quas",
+            "email": "dubuque.anderson@example.net",
+            "isManager": false,
+            "password": "Dmg;L_Sr7~Ol&lt;"
         }
     }
 };
@@ -3726,10 +5302,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.name"                data-endpoint="PUTapi-v1-users--user_id-"
-               value="deserunt"
+               value="quas"
                data-component="body">
     <br>
-<p>Example: <code>deserunt</code></p>
+<p>Example: <code>quas</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -3737,10 +5313,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.email"                data-endpoint="PUTapi-v1-users--user_id-"
-               value="dejon21@example.org"
+               value="dubuque.anderson@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>dejon21@example.org</code></p>
+<p>Must be a valid email address. Example: <code>dubuque.anderson@example.net</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>isManager</code></b>&nbsp;&nbsp;
@@ -3761,7 +5337,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -3769,10 +5345,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.password"                data-endpoint="PUTapi-v1-users--user_id-"
-               value="_;@^!]8x>qBH}=3`<[0K"
+               value="Dmg;L_Sr7~Ol<"
                data-component="body">
     <br>
-<p>Example: <code>_;@^!]8x&gt;qBH}=3</code>&lt;[0K`</p>
+<p>Example: <code>Dmg;L_Sr7~Ol&lt;</code></p>
                     </div>
                                     </details>
         </div>
@@ -3801,10 +5377,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"name\": \"iure\",
-            \"email\": \"tstark@example.net\",
-            \"isManager\": true,
-            \"password\": \"p`\\/F_TjSYaL_\"
+            \"name\": \"distinctio\",
+            \"email\": \"tevin03@example.org\",
+            \"isManager\": false,
+            \"password\": \"^XG&lt;E=k[L,(0lO\"
         }
     }
 }"
@@ -3825,10 +5401,10 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "name": "iure",
-            "email": "tstark@example.net",
-            "isManager": true,
-            "password": "p`\/F_TjSYaL_"
+            "name": "distinctio",
+            "email": "tevin03@example.org",
+            "isManager": false,
+            "password": "^XG&lt;E=k[L,(0lO"
         }
     }
 };
@@ -3980,10 +5556,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.name"                data-endpoint="PATCHapi-v1-users--user_id-"
-               value="iure"
+               value="distinctio"
                data-component="body">
     <br>
-<p>Example: <code>iure</code></p>
+<p>Example: <code>distinctio</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -3991,10 +5567,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.email"                data-endpoint="PATCHapi-v1-users--user_id-"
-               value="tstark@example.net"
+               value="tevin03@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>tstark@example.net</code></p>
+<p>Must be a valid email address. Example: <code>tevin03@example.org</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>isManager</code></b>&nbsp;&nbsp;
@@ -4015,7 +5591,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>true</code></p>
+<p>Example: <code>false</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -4023,10 +5599,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.password"                data-endpoint="PATCHapi-v1-users--user_id-"
-               value="p`/F_TjSYaL_"
+               value="^XG<E=k[L,(0lO"
                data-component="body">
     <br>
-<p>Example: <code>p</code>/F<em>TjSYaL</em>`</p>
+<p>Example: <code>^XG&lt;E=k[L,(0lO</code></p>
                     </div>
                                     </details>
         </div>
@@ -4090,10 +5666,244 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;errors&quot;: {
-        &quot;type&quot;: &quot;AuthenticationException&quot;,
-        &quot;status&quot;: 401,
-        &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: [
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 1,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Dr. Rigoberto Renner IV&quot;,
+                &quot;email&quot;: &quot;corbin.wolff@example.com&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 2,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Electa Mertz&quot;,
+                &quot;email&quot;: &quot;mcormier@example.org&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/2&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 3,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Ms. Anne Gleichner&quot;,
+                &quot;email&quot;: &quot;bhodkiewicz@example.com&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/3&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 4,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Eleazar Johns&quot;,
+                &quot;email&quot;: &quot;melyssa.lebsack@example.com&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/4&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 5,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Cheyanne Leffler&quot;,
+                &quot;email&quot;: &quot;considine.pedro@example.net&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/5&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 6,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Krystina Leannon&quot;,
+                &quot;email&quot;: &quot;rkihn@example.net&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/6&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 7,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Dr. Mary Bogan Sr.&quot;,
+                &quot;email&quot;: &quot;maggio.brandt@example.com&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/7&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 8,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Jaclyn Sauer&quot;,
+                &quot;email&quot;: &quot;henry42@example.net&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/8&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 9,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Prof. Madisyn Stroman&quot;,
+                &quot;email&quot;: &quot;kohler.maudie@example.com&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/9&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 10,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;Prof. Berta McLaughlin PhD&quot;,
+                &quot;email&quot;: &quot;camilla98@example.com&quot;,
+                &quot;isManager&quot;: false,
+                &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/10&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;id&quot;: 11,
+            &quot;attributes&quot;: {
+                &quot;name&quot;: &quot;The Manager&quot;,
+                &quot;email&quot;: &quot;manager@manager.com&quot;,
+                &quot;isManager&quot;: true,
+                &quot;emailVerifiedAt&quot;: null,
+                &quot;createdAt&quot;: &quot;2025-01-21T13:57:48.000000Z&quot;,
+                &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:48.000000Z&quot;
+            },
+            &quot;links&quot;: {
+                &quot;self&quot;: &quot;http://localhost/api/v1/authors/11&quot;
+            }
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost/api/v1/authors?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost/api/v1/authors?page=9&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: &quot;http://localhost/api/v1/authors?page=2&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 9,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=2&quot;,
+                &quot;label&quot;: &quot;2&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=3&quot;,
+                &quot;label&quot;: &quot;3&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=4&quot;,
+                &quot;label&quot;: &quot;4&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=5&quot;,
+                &quot;label&quot;: &quot;5&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=6&quot;,
+                &quot;label&quot;: &quot;6&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=7&quot;,
+                &quot;label&quot;: &quot;7&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=8&quot;,
+                &quot;label&quot;: &quot;8&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=9&quot;,
+                &quot;label&quot;: &quot;9&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/v1/authors?page=2&quot;,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost/api/v1/authors&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 11,
+        &quot;total&quot;: 126
     }
 }</code>
  </pre>
@@ -4232,10 +6042,20 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;errors&quot;: {
-        &quot;type&quot;: &quot;AuthenticationException&quot;,
-        &quot;status&quot;: 401,
-        &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;data&quot;: {
+        &quot;type&quot;: &quot;user&quot;,
+        &quot;id&quot;: 1,
+        &quot;attributes&quot;: {
+            &quot;name&quot;: &quot;Dr. Rigoberto Renner IV&quot;,
+            &quot;email&quot;: &quot;corbin.wolff@example.com&quot;,
+            &quot;isManager&quot;: false,
+            &quot;emailVerifiedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+            &quot;createdAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;,
+            &quot;udpatedAt&quot;: &quot;2025-01-21T13:57:47.000000Z&quot;
+        },
+        &quot;links&quot;: {
+            &quot;self&quot;: &quot;http://localhost/api/v1/authors/1&quot;
+        }
     }
 }</code>
  </pre>

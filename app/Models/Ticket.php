@@ -17,11 +17,12 @@ class Ticket extends Model
 		'title',
 		'description',
 		'status',
+		'user_id',
 	];
 
 	public function author(): BelongsTo
 	{
-		return $this->belongsTo(User::class, 'user_id');
+		return $this->belongsTo(User::class);
 	}
 
 	public function scopeFilter(Builder $builder, QueryFilter $filters)

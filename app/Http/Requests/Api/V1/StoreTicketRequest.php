@@ -42,7 +42,7 @@ class StoreTicketRequest extends BaseTicketRequest
 			$rules['data.relationships.author.data'] = 'required|array';
 		}
 
-		$rules[$authorIdAttribute] = $authorRule . '|size:' . $user->id;
+		$rules[$authorIdAttribute] = $authorRule . '|in:' . $user->id;
 
 		if ($user->tokenCan(Abilities::CreateTicket)) {
 			$rules[$authorIdAttribute] = $authorRule;
